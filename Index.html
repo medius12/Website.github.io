@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellar Horizon | Deep Space Primer</title>
+  <style>
+    /* Design.md Specification Styles */
+    :root {
+      --bg-primary: #090d16;
+      --bg-card: #111827;
+      --accent: #38bdf8;
+      --accent-purple: #a855f7;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(9, 13, 22, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #1f2937;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 4rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--bg-primary);
+      padding: 0.8rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* Feature Grid Section */
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: var(--text-main);
+    }
+
+    .grid-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid #1f2937;
+      padding: 1.75rem;
+      border-radius: 8px;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      padding: 2rem 1.5rem;
+      background-color: var(--bg-card);
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-purple);
+    }
+
+    .about-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .about-section p {
+      color: var(--text-muted);
+    }
+
+    /* Stats List */
+    .stats-section {
+      max-width: 800px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .stats-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .stats-item {
+      background: #0f172a;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #1e293b;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .stats-item strong {
+      color: var(--accent-purple);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #1f2937;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Stellar Horizon</h1>
+    <nav>
+      <a href="#explore">Deep Space</a>
+      <a href="#about">Observatories</a>
+      <a href="#stats">Cosmic Stats</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Exploring the Wonders of Deep Space</h2>
+      <p>A visual primer on celestial bodies, distant nebulae, and the fundamental structures shaping our universe.</p>
+      <a href="#explore" class="btn">Begin Exploration</a>
+    </section>
+
+    <div class="grid-container" id="explore">
+      <h2 class="section-title">Cosmic Structures</h2>
+      <section class="grid">
+        <div class="card">
+          <h3>Nebulae & Star Nurseries</h3>
+          <p>Vast clouds of dust and gas where gravity triggers the birth of new stellar systems across light-years.</p>
+        </div>
+        <div class="card">
+          <h3>Exoplanetary Systems</h3>
+          <p>Distant worlds orbiting foreign suns, ranging from scorching hot Jupiters to ocean-covered super-Earths.</p>
+        </div>
+        <div class="card">
+          <h3>Supernovae & Relics</h3>
+          <p>The explosive deaths of giant stars that synthesize heavy elements and leave behind neutron stars or black holes.</p>
+        </div>
+      </section>
+    </div>
+
+    <section id="about" class="about-section">
+      <h2>Mapping the Observable Universe</h2>
+      <p>Astronomy bridges physics, chemistry, and observational science to reveal how energy and matter evolve over billions of years. Modern orbital telescopes continue to expand our visible horizon, capturing light that traveled across space before Earth was formed.</p>
+    </section>
+
+    <section id="stats" class="stats-section">
+      <h2 class="section-title">Quick Facts</h2>
+      <ul class="stats-list">
+        <li class="stats-item">
+          <strong>Stellar Scale</strong>
+          Estimated ~200 billion trillion stars in the observable universe.
+        </li>
+        <li class="stats-item">
+          <strong>Light Speed</strong>
+          Travels at roughly 299,792 kilometers per second.
+        </li>
+        <li class="stats-item">
+          <strong>Cosmic Background</strong>
+          CMB radiation dates back ~380,000 years after the Big Bang.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Stellar Horizon Project. Built for Guided Practice Week 5.</p>
+  </footer>
+
+</body>
+</html>
